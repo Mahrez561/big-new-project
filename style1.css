@@ -1,0 +1,253 @@
+body {
+  margin: 0; /* Remove default body margin */
+  background-color: rgb(84, 114, 88);
+  font-family: sans-serif; /* Set a default font */
+}
+
+.header {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 0; /* Remove border-radius if you want it full width */
+}
+
+.logo {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  margin-right: 20px; /* Space between logo and title */
+}
+
+.BB {
+  color: gold;
+  font-size: 2.5em; /* Larger font size */
+  font-weight: 900;
+  font-style: italic;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  flex-grow: 1; /* Allow title to take available space */
+  text-align: center; /* Center the title */
+  padding-left: 0; /* Remove existing padding */
+}
+
+/* Hero Section Styles */
+.hero {
+  background-image: url('your-hero-image.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before { /* Overlay for better text readability */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero-content {
+  position: relative; /* To ensure it's above the overlay */
+  z-index: 1;
+}
+
+.hero-content h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: royalblue;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: dodgerblue;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center items */
+  padding: 40px 20px; /* Add padding */
+  gap: 20px; /* Space between product items */
+}
+
+.section > div { /* Style for each product container */
+  flex: 1 1 300px; /* Flex properties for responsiveness */
+  max-width: 350px; /* Max width for each item */
+  text-align: center;
+  background-color: white; /* Background for product cards */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pic-ctn {
+  position: relative;
+  width: 100%; /* Adjust width for responsiveness */
+  height: 300px; /* Adjust height */
+  margin-bottom: 2vh;
+}
+
+.pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Ensure images cover the container */
+  border-radius: 10px;
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+/* Remove duplicate animation delays for clarity */
+.pic-ctn img:nth-child(2) {
+  animation-delay: 4s;
+}
+.pic-ctn img:nth-child(3) {
+  animation-delay: 4s;
+}
+.pic-ctn img:nth-child(4) {
+  animation-delay: 3s;
+}
+.pic-ctn img:nth-child(5) {
+  animation-delay: 4s;
+}
+
+
+.price1 {
+  text-align: center;
+  color: #333; /* Darker text color */
+  font-style: italic;
+  margin-top: 15px;
+}
+
+/* Button styles from Uiverse.io */
+button {
+  font-family: inherit;
+  font-size: 16px; /* Adjusted font size */
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-top: 15px; /* Space above button */
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+  width: 24px; /* Ensure SVG size */
+  height: 24px;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from { transform: translateY(0.1em); }
+  to { transform: translateY(-0.1em); }
+}
+
+@keyframes display {
+  0% { transform: translateX(200px); opacity: 0; }
+  10% { transform: translateX(0); opacity: 1; }
+  20% { transform: translateX(0); opacity: 1; }
+  30% { transform: translateX(-200px); opacity: 0; }
+  100% { transform: translateX(-200px); opacity: 0; }
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px; /* Space above footer */
+}
+
+footer i {
+  margin: 0 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .BB {
+    font-size: 2em;
+    padding-left: 0;
+  }
+  .hero-content h2 {
+    font-size: 2em;
+  }
+  .hero-content p {
+    font-size: 1em;
+  }
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  .section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section > div {
+    width: 90%;
+    max-width: none;
+  }
+  .pic-ctn {
+    height: 250px;
+  }
+  .pic {
+      border-radius: 0;
+  }
+}
